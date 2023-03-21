@@ -1,0 +1,27 @@
+<button (click)="mostrar()" type="submit" class="btn btn-primary">{{textoBotao}} Tabela</button>
+<table class="table" *ngIf="this.exibirTabela">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Height</th>
+            <th scope="col">Width</th>
+            <th scope="col">Price</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produto of modelo">
+            <td>{{produto.title}}</td>
+            <td>{{produto.type}}</td>
+            <td>{{produto.description}}</td>
+            <td class="text-center">{{produto.height}}</td>
+            <td class="text-center">{{produto.width}}</td>
+            <td class="text-center">{{produto.price}}</td>
+            <td class="text-center">{{produto.rating}}</td>
+            <td class="text-center" *ngIf="produto.price > 100">No</td>
+            <td class="text-center" *ngIf="produto.price <= 100">Yes</td>
+        </tr>
+</table>

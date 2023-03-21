@@ -1,0 +1,25 @@
+<form>
+    <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" class="form-control" name="nome" placeholder="Nome" [(ngModel)]="this.cliente.nome">
+        <label>{{tipoDocumento}}:</label>
+        <input type="text" class="form-control" name="documento" placeholder={{tipoDocumento}} [(ngModel)]="this.cliente.documento">
+        <label>Endereço:</label>
+        <input type="text" class="form-control" name="endereco" placeholder="Endereço" [(ngModel)]="this.cliente.endereco">
+        <label>Tipo de Cliente:</label>
+        <div class="form-check">
+            <input (click)="alterarDocumento('CPF')" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Física
+            </label>
+        </div>
+        <div class="form-check">
+            <input (click)="alterarDocumento('CNPJ')" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Jurídica
+            </label>
+        </div>
+    </div>
+
+    <button (click)="mostrarCliente()" type="submit" class="btn btn-primary">Enviar</button>
+</form>
